@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Education> educationList = new ArrayList<>();
         ArrayList<Work> workList = new ArrayList<>();
         ArrayList<Skills> skillsList = new ArrayList<>();
-        ArrayList<String> descriptionsList = new ArrayList<>();
+
 
         Scanner key = new Scanner(System.in);
 
@@ -81,11 +81,15 @@ public class Main {
                 jobs.setEndDate(key.nextLine());
 
                 do {
+                    ArrayList<String> descriptionsList = new ArrayList<>();
+
                     System.out.println("Please add at least one description of your job responsibilities.");
                     System.out.print("Job description (" + describeCounter + "): ");
                     String d = key.nextLine();
 
                     descriptionsList.add(d);
+                    jobs.setDescription(descriptionsList);
+
                     describeCounter++;
 
                     System.out.println("\nミ☆ Would you like to add more work descriptions of your job? (Yes/No)");
