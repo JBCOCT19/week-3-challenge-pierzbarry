@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Education> educationList = new ArrayList<>();
         ArrayList<Work> workList = new ArrayList<>();
         ArrayList<Skills> skillsList = new ArrayList<>();
-
+        ArrayList<String> descriptionsList = new ArrayList<>();
 
         Scanner key = new Scanner(System.in);
 
@@ -81,15 +81,13 @@ public class Main {
                 jobs.setEndDate(key.nextLine());
 
                 do {
-                    ArrayList<String> descriptionsList = new ArrayList<>();
+
 
                     System.out.println("Please add at least one description of your job responsibilities.");
                     System.out.print("Job description (" + describeCounter + "): ");
                     String d = key.nextLine();
 
                     descriptionsList.add(d);
-                    jobs.setDescription(descriptionsList);
-
                     describeCounter++;
 
                     System.out.println("\nミ☆ Would you like to add more work descriptions of your job? (Yes/No)");
@@ -102,8 +100,9 @@ public class Main {
 
                 } while (describeLoop);
 
-
+                jobs.setDescription(descriptionsList);
                 workList.add(jobs);
+
                 System.out.println("\nミ☆ Would you like to add more work experience to your resume? (Yes/No)");
 
                 String userKey = key.nextLine();
@@ -159,7 +158,7 @@ public class Main {
                 }
             }
 
-            System.out.println("ミ★ Wow I mean look at that resume! Absolutely gorgeous.");
+            System.out.println("\nミ★ Wow I mean look at that resume! Absolutely gorgeous.");
             System.out.println("ミ☆ That took a lot of skill on my part to make you look good ya know.");
             System.out.println("ミ★ Do you want to build another resume? (Yes/No)");
 
